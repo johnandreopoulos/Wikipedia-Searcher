@@ -1,0 +1,56 @@
+<head>
+  <title>Search</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<navbar>
+  <a href="/">Home</a>
+</navbar>
+
+<form action="/search" method="GET">
+  <input type="text" name="search" autocomplete="off">
+  <button type="submit">Search</button>
+</form>
+<div id="wikipedia">
+  <p>Search for something on wikipedia.</p>
+</div>
+<ul id="websites"></ul>
+
+
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const search = form.search.value;
+    const res = await fetch(`/search?search=${search}`);
+    const data = await res.json();
+
+    const {
+      title,
+      extract,
+      thumbnail
+    } = data.wikipedia;
+    const websites = data.websites;
+
+    const wikipedia = document.querySelector('#wikipedia');
+    if (title == "Not found.") {
+      wikipedia.innerHTML = '<h2>Sorry, i can\'t find anything.</h2>';
+      return;
+    } else {
+      wikipedia.innerHTML = `
+      <h2>${title}</h2>
+      ${thumbnail ? `<img src="${thumbnail}">` : ''}
+      <p>${extract}</p>
+    `;
+    }
+
+    const websitesDiv = document.querySelector('#websites');
+    websitesDiv.innerHTML = '<h2>Other websites</h2>';
+    websites.forEach(website => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${website.url}">${website.title}</a>`;
+      websitesDiv.appendChild(li);
+    });
+  });
+</script>

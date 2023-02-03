@@ -1,0 +1,150 @@
+body {
+    background-color: #343541;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #333;
+    padding: 0;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-image: url('/assets/images/bg.jpg');
+    background-blend-mode: luminosity;
+    background-size: cover;
+}
+
+navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #202123;
+    padding: 1rem;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-align: center;
+    width: 601px;
+}
+
+navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+form input {
+    width: 300px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+    border-bottom: 1px solid #010102;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+form button {
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    background-image: url('/assets/images/bg.jpg');
+    background-blend-mode: luminosity;
+    background-size: cover;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#wikipedia {
+    margin-top: 50px;
+    margin: 50px;
+    text-align: justify;
+    color: #fff;
+    background: #202123;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wikipedia h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#wikipedia img {
+    width: 15%;
+    height: 15%;
+    margin-bottom: 20px;
+}
+
+#websites {
+    margin-top: 50px;
+    margin: 40px;
+    text-align: justify;
+    color: #fff;
+    font-size: 18px;
+    padding: 0;
+}
+
+#websites li::before {
+    content: "🔗";
+    margin-right: 10px;
+}
+
+#websites li {
+    margin-bottom: 10px;
+    background: #202123;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+#websites li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#websites li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    navbar {
+        width: 50%;
+    }
+
+    form {
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    form input {
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #wikipedia {
+        margin: 10px;
+    }
+
+    #websites {
+        margin: 10px;
+    }
+}
