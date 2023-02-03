@@ -1,5 +1,7 @@
 # Wikipedia-Searcher
 
+![explorer_iQ3Dcme7AR](https://user-images.githubusercontent.com/39243722/216575800-205f4260-93b7-4b6f-a631-3f5148b41875.gif)
+
 ## Overview
 
 This is a node.js code for a web server application built using the Express framework. The application serves a webpage that allows users to search for information by sending a search query to the server. The code integrates with two external APIs (Wikipedia and DuckDuckGo) to retrieve search results.
@@ -46,5 +48,3 @@ The code sets up two endpoints for handling requests:
 - Express
 - Undici
 - EJS
-
-![explorer_iQ3Dcme7AR](https://user-images.githubusercontent.com/39243722/216575800-205f4260-93b7-4b6f-a631-3f5148b41875.gif)
